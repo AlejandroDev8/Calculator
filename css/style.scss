@@ -1,0 +1,131 @@
+* {
+  /*Formateamos toda la página*/
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  background: linear-gradient(45deg, #ffb5a7, #fcd5ce, #f8edeb);
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.calculator {
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 1.875rem rgb(187, 130, 130);
+  background-color: #fff;
+  #display {
+    color: #0a1e23;
+    margin: 0 0.625rem;
+    width: auto;
+    height: 6.875rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 2.1875rem;
+    margin-bottom: 0.9375rem;
+    font-weight: 700;
+  }
+  #equal {
+    height: 8.125rem;
+    font-weight: 700;
+  }
+  #clear {
+    background-color: #ffd5d8;
+    color: #fc4552;
+    font-weight: 700;
+  }
+  .btn-number {
+    background-color: #c3eaff;
+    color: #000;
+    font-weight: 700;
+  }
+  .btn-operator {
+    background-color: #ffd0fb;
+    color: #f967f3;
+    font-weight: 700;
+  }
+  .btn-equal {
+    background-color: #adf9e7;
+    color: #000;
+    font-weight: 700;
+  }
+  /* Dark Mode */
+
+  &.dark-mode {
+    background-color: #1b1b1b;
+    #display{
+      color: #f8fafb;
+      font-weight: 700;
+    }
+    #clear{
+      background-color: #adb5bd;
+      color: #000;
+      font-weight: 700;
+    }
+    .btn-number{
+      background-color: #adb5bd;
+      color: #000;
+      font-weight: 700;
+    }
+    .btn-operator{
+      background-color: #ffb700;
+      color: #fff;
+      font-weight: 700;
+    }
+    .btn-equal{
+      background-color: #ffb700;
+      color: #fff;
+      font-weight: 700;
+    }
+  }
+  .theme-toggler {
+    position: absolute;
+    top: 1.875rem;
+    right: 1.875rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 1.875rem;
+      height: 1.875rem;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: #333;
+      z-index: -1;
+    }
+  }
+  .theme-toggler.active {
+    color: #333;
+    &::before {
+      background-color: white;
+    }
+  }
+  button {
+    width: 3.75rem;
+    height: 3.75rem;
+    border: none;
+    border-radius: 1.875rem;
+    margin: 0.125rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 200ms ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
